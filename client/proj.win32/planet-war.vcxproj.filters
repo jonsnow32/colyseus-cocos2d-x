@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="proj.win32">
+      <UniqueIdentifier>{d94f4621-e396-4903-a315-fca560982d23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{9d5879ad-8632-4f05-aad5-ee374147401a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Network\colyseus">
+      <UniqueIdentifier>{b3c4f216-b171-4bcb-b52d-5b7068c5b048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Network">
+      <UniqueIdentifier>{32f23f11-e5ac-4c71-a5f4-f95aeb34acc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Planet-war">
+      <UniqueIdentifier>{ad14042b-9f74-411a-80f5-f1c1b0507d37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>proj.win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Network\colyseus\Client.cpp">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Network\colyseus\DeltaContainer.cpp">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Network\colyseus\MessageEventArgs.cpp">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Network\colyseus\Protocol.cpp">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Network\colyseus\Room.cpp">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamePlay\Planet.cpp">
+      <Filter>Classes\Planet-war</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamePlay\Player.cpp">
+      <Filter>Classes\Planet-war</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamePlay\Satellite.cpp">
+      <Filter>Classes\Planet-war</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamePlay\SceneBattle.cpp">
+      <Filter>Classes\Planet-war</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>proj.win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Network\colyseus\Client.hpp">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Network\colyseus\Compare.h">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Network\colyseus\DeltaContainer.h">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Network\colyseus\MessageEventArgs.hpp">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Network\colyseus\Protocol.hpp">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Network\colyseus\Room.hpp">
+      <Filter>Classes\Network\colyseus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Network\NetworkEventDefine.h">
+      <Filter>Classes\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Header.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamePlay\Planet.hpp">
+      <Filter>Classes\Planet-war</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamePlay\Player.hpp">
+      <Filter>Classes\Planet-war</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamePlay\Satellite.hpp">
+      <Filter>Classes\Planet-war</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamePlay\SceneBattle.hpp">
+      <Filter>Classes\Planet-war</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>proj.win32</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

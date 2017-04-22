@@ -7,6 +7,10 @@ Download and copy cocos2d-x [v3.15+](http://cocostudio.download.appget.cn/Cocos2
 ### Win32 version
 Run {$ROOT_FOLDER}/client/proj.win32 (tested on visual studio 2015)
 
+### iOs version
+Run {$ROOT_FOLDER}/client/proj.ios_mac (tested on xcode 8.2)
+
+
 ## How to run server
 Ensure you have [Node v6+](http://nodejs.org/) installed. Then run these
 commands in your commandline:

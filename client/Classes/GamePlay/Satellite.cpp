@@ -24,7 +24,7 @@ _planetTarget(0)
 
 bool Satellite::init()
 {
-    initWithFile("dot.png");
+    initWithTexture(TextureCache::getInstance()->addImage("dot.png"));
     scheduleUpdate();
     return true;
 }
@@ -37,6 +37,7 @@ Planet* Satellite::getPlanet() const
 void Satellite::setPlanet(Planet *var)
 {
     _planet = var;
+    this->setColor(_planet->getOwner()->getColor());
     //_graphics->drawDot(Vec2(0,0), 3, Color4F(var->getTeam_()->getColor()));
 }
 

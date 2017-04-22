@@ -34,6 +34,8 @@ bool SceneBattle::init()
 	auto touchListener = EventListenerTouchOneByOne::create();
 	touchListener->onTouchBegan = CC_CALLBACK_2(SceneBattle::onTouchBegan, this);
 	touchListener->onTouchEnded = CC_CALLBACK_2(SceneBattle::onTouchEnd, this);
+    touchListener->onTouchMoved = CC_CALLBACK_2(SceneBattle::onTouchMove, this);
+    
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
 
 	Client::getInstance()->start("ws://13.76.179.224:2667", CC_CALLBACK_1(SceneBattle::onConnectToServer, this));
@@ -64,10 +66,11 @@ void SceneBattle::onConnectToServer(int response)
 
 bool SceneBattle::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
 {
+    std::string id = Client::getInstance()->getClientID();
     Vec2 pos = touch->getLocation();
     for(int i = 0 ; i < _planets.size() ; i++)
     {
-        if(_planets[i]->getPosition().distance(pos) < _planets[i]->getMaxSatellite())
+        if(_planets[i]->getOwner() && _planets[i]->getOwner()->getID() == id &&  _planets[i]->getPosition().distance(pos) < _planets[i]->getMaxSatellite())
         {
             _planetsSelected.push_back(_planets[i]);
             _planets[i]->onFocus(true);
@@ -76,8 +79,16 @@ bool SceneBattle::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
     return true;
 }
 
+void SceneBattle::onTouchMove(cocos2d::Touch* touch, cocos2d::Event* event)
+{
+    onTouchBegan(touch,event);
+}
+
 void SceneBattle::moveSatellites(Planet* src, Planet *target,bool isCollistion)
 {
+    if(src->getID() == target->getID())
+        return;
+    
     int n_satellite = 0;
     if(isCollistion)
         n_satellite = src->attack(target);
@@ -121,12 +132,11 @@ void SceneBattle::onTouchEnd(cocos2d::Touch* touch, cocos2d::Event* event)
          }
         
     }
-    if(target)
+    for(int i = 0 ; i < _planetsSelected.size() ; i++)
     {
-        for(int i = 0 ; i < _planetsSelected.size() ; i++)
-        {
+        if(target)
             moveSatellites(_planetsSelected[i],target);
-        }
+        _planetsSelected[i]->onFocus(false);
     }
     _planetsSelected.clear();
 }

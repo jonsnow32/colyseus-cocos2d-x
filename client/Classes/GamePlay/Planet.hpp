@@ -43,6 +43,7 @@ public:
     void reset();
 private:
     cocos2d::DrawNode*   _graphics;
+    cocos2d::DrawNode*   _focus;
     cocos2d::Label * _info;
 };
 #endif /* Planet_hpp */

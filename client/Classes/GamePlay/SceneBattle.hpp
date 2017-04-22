@@ -28,6 +28,8 @@ public:
 	void onConnectToServer(int response);
     bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
     void onTouchEnd(cocos2d::Touch* touch, cocos2d::Event* event);
+    void onTouchMove(cocos2d::Touch* touch, cocos2d::Event* event);
+    
 public:
     CREATE_FUNC(SceneBattle);
     virtual ~SceneBattle();

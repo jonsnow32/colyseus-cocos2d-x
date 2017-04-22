@@ -63,6 +63,12 @@ bool Planet::initWithSize(int maxSatellite,float spawnSpeed,Player* player)
     _graphics =  cocos2d::DrawNode::create();
     this->addChild(_graphics);
     
+    
+    _focus =  cocos2d::DrawNode::create();
+    this->addChild(_focus);
+    _focus->drawCircle(Vec2(0,0), _maxSatellite + 2, 0, 100, false, 1.0, 1.0, Color4F::GRAY);
+    _focus->setVisible(false);
+    
     setPlayer(player);
     schedule(schedule_selector(Planet::spawn), _spawnSpeed);
     return true;
@@ -95,7 +101,7 @@ int Planet::getnSatelite() const
 }
 void Planet::onFocus(bool focus)
 {
-    
+    _focus->setVisible(focus);
 }
 int Planet::attack(Planet* des)
 {

@@ -1,25 +1,9 @@
-colyseus-examples
-===
-
-How to run
----
-
+Ensure you have Node v6+ installed. Then run these commands in your commandline:
 ```
-git clone https://github.com/gamestdio/colyseus-examples.git
-cd colyseus-examples
+cd server
 npm install
 npm start
 ```
-
-Open [http://localhost:2657](http://localhost:2657) in your browser.
-
-Links
----
-
-- [Colyseus Game Server](https://github.com/gamestdio/colyseus/)
-- [JavaScript Client](https://github.com/gamestdio/colyseus.js/)
-- [Documentation](https://github.com/gamestdio/colyseus/wiki)
-
 License
 ---
 
